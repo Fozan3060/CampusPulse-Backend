@@ -2,6 +2,13 @@ import pg from 'pg';
 import dotenv from 'dotenv';
 dotenv.config();
 
+/**
+ * Database connection pool
+ * Uses PostgreSQL connection pool for query execution
+ * 
+ * Database schema is managed through migrations (see database/migrations/)
+ * Run migrations with: npm run migrate
+ */
 const { Pool } = pg;
 const pool = new Pool({
   user: process.env.DB_USER,

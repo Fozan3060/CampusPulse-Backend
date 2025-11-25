@@ -2,12 +2,15 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import morgan from 'morgan'; // <-- 1. IMPORT MORGAN
+import morgan from 'morgan';
 import authRoutes from './routes/auth.js';
 import adminRoutes from './routes/admin.js';
 import userRoutes from './routes/user.js';
 
 dotenv.config();
+
+// NOTE: Run database migrations before starting the server
+// Run: npm run migrate
 
 const app = express();
 const PORT = process.env.PORT || 3001;
